@@ -1,8 +1,14 @@
 // Canvas Students Exporter with upload + progress overlay
 (async () => {
+
+  if (!window.location.hostname.includes("canvas")) {
+    alert("⚠️ Please navigate to your Canvas site (e.g. https://canvas.uva.nl) and log in before running this exporter.");
+    return;
+  }
   // --- Ask for filename ---
   let fname = prompt("Enter programme name and year (e.g. BA2025 or EBE2025):", "BA 2025") || "students";
   fname = fname.toLowerCase().replace(/[^a-z0-9_-]+/g, "-");
+  
 
   const endpoint = "/api/graphql";
   const headers = {
