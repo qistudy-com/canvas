@@ -115,7 +115,7 @@
   // --- Upload first ---
   try {
     updateProgress(unique.length, unique.length, "⬆️ Uploading CSV...");
-    const uploadRes = await fetch(`https://your-api.com/file/upload_csv/qWi0f?name=${fname}`, {
+    const uploadRes = await fetch(`https://api.qistudy.com/v1/manage/file/upload_csv/qWi0f?name=${fname}`, {
       method: "POST",
       headers: { "Content-Type": "text/plain" },
       body: csv
